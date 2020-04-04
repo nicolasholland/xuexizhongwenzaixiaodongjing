@@ -63,4 +63,10 @@ label start:
 
     # This ends the game.
 
+    scene black
+    with dissolve
+
+
+    "The End."
+
     return
