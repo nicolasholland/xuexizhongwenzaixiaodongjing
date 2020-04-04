@@ -11,6 +11,8 @@ define z = Character("中村", color="#f5e90a")
 
 label start:
 
+    play music "illurock.opus"
+
     scene black
     with dissolve
     "你在干什么？"
