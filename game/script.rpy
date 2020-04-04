@@ -5,11 +5,15 @@
 
 define d = Character("大卫", color="#5eddfc")
 define m = Character("玛丽", color="#f13d5e")
-
+define z = Character("中村", color="#f5e90a")
 
 # The game starts here.
 
 label start:
+
+    scene black
+    with dissolve
+    "你在干什么？"
 
     scene bg street1
     with fade
@@ -31,11 +35,11 @@ label start:
     hide mali
 
     show dawei
-    d "做作业呢。\nI'm doing some work."
+    d "做作业呢。\nI'm doing homework."
     hide dawei
 
     show mali suprised
-    m "是吗？你每天都有很多作业吗？\nReally? Do you have lots of work everyday?"
+    m "是吗？你每天都有很多作业吗？\nReally? Do you have lots of homework everyday?"
     hide mali
 
     show dawei
@@ -67,14 +71,57 @@ label start:
     d "明天你们没有课吗？\nDon't you have courses tomorrow?"
     hide dawei
 
+
     show mali smile
     m "有，我们十点就回宿舍。\nWe do, we'll go back to the dorm already at 10."
     hide mali
 
+    scene black
+    with dissolve
+    "你打算什么？"
+
     scene bg street2
     with fade
 
+    show mali smile
+    m "中村， 明天是星期天， 你打算干什么？\nZhongcun, tomorrow is sunday, do you have plans?"
+    hide mali
 
+    show zhongcun
+    z "我打算去商店买东西。\nI plan to go shopping."
+    hide zhongcun
+
+    show mali suprised
+    m "是学校的商店吗？\nAt the campus store?"
+    hide mali
+
+    show zhongcun
+    z "不，是购物中心\nNo, the mall."
+    hide zhongcun
+
+    show mali suprised
+    m "那儿的东西贵不贵？\nIs it expensive there?"
+    hide mali
+
+    show zhongcun
+    z "还可以。那儿的东西很多，质量也不错。\nKind of. They have a lot of cool stuff there."
+    hide zhongcun
+
+    show mali smile
+    m "我正打算买衣服呢，明天和你一起去，好不好？\nI'm planning to go cloths shopping, let's go together tomorrow, good?"
+    hide mali
+
+    show zhongcun
+    z "好阿!\nAwesome!"
+    hide zhongcun
+
+    show mali smile
+    m "咱们几点去？\nWhat time should we go?"
+    hide mali
+
+    show zhongcun
+    z "购物中心九点开门，咱们十点去吧。\nThe mall opens at 9, let's go at 10."
+    hide zhongcun
 
     # This ends the game.
 
