@@ -6,4 +6,7 @@ traceback.txt
 *.save
 game/saves/*
 game/gui/main_menu_.png
+game/tl/None/common.rpymc
+game/cache/pyanalysis.rpyb
+project.json
 
