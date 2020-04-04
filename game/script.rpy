@@ -16,6 +16,7 @@ label start:
     # images directory to show it.
 
     scene bg street1
+    with fade
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -53,6 +54,12 @@ label start:
     d "明天你们没有课吗？\nDon't you have courses tomorrow?"
 
     m "有，我们十点就回宿舍。\nWe do, we'll go back to the dorm already at 10."
+
+
+    scene bg street2
+    with fade
+
+
 
     # This ends the game.
 
