@@ -1,142 +1,153 @@
 ﻿################################################################################
-## 初始化
+## Initialization
 ################################################################################
 
-## “init offset”语句可使此文件中的初始化语句在任何其他文件中的“init”语句之前运
-## 行。
+## The init offset statement causes the init code in this file to run before
+## init code in any other file.
 init offset = -2
 
-## 调用gui.init会将样式重置为合理的默认值，并设置游戏的宽度和高度（分辨率）。
+## Calling gui.init resets the styles to sensible default values, and sets the
+## width and height of the game.
 init python:
     gui.init(1280, 720)
 
 
-
 ################################################################################
-## GUI配置变量
+## GUI Configuration Variables
 ################################################################################
 
 
-## 颜色 ##########################################################################
+## Colors ######################################################################
 ##
-## 界面中文本的颜色。
+## The colors of text in the interface.
 
-## 整个界面中使用的强调色，用于标记和突出显示文本。
-define gui.accent_color = '#66cc00'
+## An accent color used throughout the interface to label and highlight text.
+define gui.accent_color = '#cc0000'
 
-## 当既未选中也未悬停时用于文本按钮的颜色。
+## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
 
-## 小颜色用于小文本，需要更亮/更暗才能达到相同的效果。
+## The small color is used for small text, which needs to be brighter/darker to
+## achieve the same effect.
 define gui.idle_small_color = '#aaaaaa'
 
-## 用于悬停的按钮和滑条的颜色。
+## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#a3e066'
 
-## 用于选中但非焦点的文本按钮的颜色。当一个按钮为当前屏幕或设置选项值时，会处于
-## 选中状态。
+## The color used for a text button when it is selected but not focused. A
+## button is selected if it is the current screen or preference value.
 define gui.selected_color = '#ffffff'
 
-## 用于无法选择的文本按钮的颜色。
+## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
 
-## 用于未填充的滑条部分的颜色。这些颜色不直接使用，但在重新生成条形图像文件时使
-## 用。
+## Colors used for the portions of bars that are not filled in. These are not
+## used directly, but are used when re-generating bar image files.
 define gui.muted_color = '#285100'
-define gui.hover_muted_color = '#3d7a00'
+define gui.hover_muted_color = '#7a3d00'
 
-## 用于对话和菜单选择文本的颜色。
+## The colors used for dialogue and menu choice text.
 define gui.text_color = '#ffffff'
 define gui.interface_text_color = '#ffffff'
 
 
-## 字体和字体大小 #####################################################################
+## Fonts and Font Sizes ##########################################################
 
-## 用于游戏内文本的字体。
+## The font used for in-game text.
 define gui.text_font = "SourceHanSans-Light-Lite.ttf"
 
-## 用于角色名称的字体。
+## The font used for character names.
 define gui.name_text_font = "SourceHanSans-Light-Lite.ttf"
 
-## 用于游戏外文本的字体。
+## The font used for out-of-game text.
 define gui.interface_text_font = "SourceHanSans-Light-Lite.ttf"
 
-## 普通对话文本的大小。
+## The size of normal dialogue text.
 define gui.text_size = 22
 
-## 角色名称的大小。
+## The size of character names.
 define gui.name_text_size = 30
 
-## 游戏用户界面中文本的大小。
-define gui.interface_text_size = 22
+## The size of text in the game's user interface.
+define gui.interface_text_size = 24
 
-## 游戏用户界面中标签的大小。
-define gui.label_text_size = 24
+## The size of labels in the game's user interface.
+define gui.label_text_size = 28
 
-## 通知屏幕上文本的大小。
+## The size of text on the notify screen.
 define gui.notify_text_size = 16
 
-## 游戏标题的大小。
+## The size of the game's title.
 define gui.title_text_size = 50
 
 
-## 标题和游戏菜单 #####################################################################
+## Main and Game Menus #########################################################
 
-## 用于标题菜单和游戏菜单的图像。
+## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
+## Should we show the name and version of the game?
+define gui.show_name = True
 
-## 对话 ##########################################################################
+
+## Dialogue ####################################################################
 ##
-## 这些变量控制对话框一次一行显示在屏幕上的方式。
+## These variables control how dialogue is displayed on the screen one line at a
+## time.
 
-## 包含对话的文本框的高度。
+## The height of the textbox containing dialogue.
 define gui.textbox_height = 185
 
-## 文本框在屏幕上的垂直位置。0.0 是顶部，0.5 是正中，1.0 是底部。
+## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
+## center, and 1.0 is the bottom.
 define gui.textbox_yalign = 1.0
 
 
-## 叙述角色名称相对文本框的位置。可以是从左侧或顶部起的整数像素，或设为“0.5”来放
-## 置到正中。
+## The placement of the speaking character's name, relative to the textbox.
+## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 240
 define gui.name_ypos = 0
 
-## 角色名称的水平对齐方式。0.0 为左侧对齐，0.5 为居中显示，而 1.0 为右侧对齐。
+## The horizontal alignment of the character's name. This can be 0.0 for left-
+## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.name_xalign = 0.0
 
-## 包含角色名称的框的宽度，高度和边界尺寸，或设为“None”以自动调整其大小。
+## The width, height, and borders of the box containing the character's name, or
+## None to automatically size it.
 define gui.namebox_width = None
 define gui.namebox_height = None
 
-## 包含角色名称的框的边界尺寸，以左、上、右、下顺序排列。
+## The borders of the box containing the character's name, in left, top, right,
+## bottom order.
 define gui.namebox_borders = Borders(5, 5, 5, 5)
 
-## 若为True，则名称框的背景将被平铺；若为False，则将缩放名称框的背景。
+## If True, the background of the namebox will be tiled, if False, the
+## background if the namebox will be scaled.
 define gui.namebox_tile = False
 
-
-## 对话框相对于文本框的位置。可以是相对于文本框从左侧或顶部起的整数像素，或设
-## 为“0.5”来放置到正中。
+## The placement of dialogue relative to the textbox. These can be a whole
+## number of pixels relative to the left or top side of the textbox, or 0.5 to
+## center.
 define gui.dialogue_xpos = 268
 define gui.dialogue_ypos = 50
 
-## 对话文本的最大宽度（以像素为单位）。
+## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 744
 
-## 对话文本的水平对齐方式。0.0 为左侧对齐，0.5 为居中显示，而 1.0 为右侧对齐。
+## The horizontal alignment of the dialogue text. This can be 0.0 for left-
+## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
 
 
-## 按钮 ##########################################################################
+## Buttons #####################################################################
 ##
 ## These variables, along with the image files in gui/button, control aspects of
 ## how buttons are displayed.
 
 ## The width and height of a button, in pixels. If None, Ren'Py computes a size.
 define gui.button_width = None
-define gui.button_height = None
+define gui.button_height = 36
 
 ## The borders on each side of the button, in left, top, right, bottom order.
 define gui.button_borders = Borders(4, 4, 4, 4)
@@ -145,10 +156,10 @@ define gui.button_borders = Borders(4, 4, 4, 4)
 ## will be linearly scaled.
 define gui.button_tile = False
 
-## 按钮使用的字体。
+## The font used by the button.
 define gui.button_text_font = gui.interface_text_font
 
-## 按钮所使用的文本大小。
+## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
 
 ## The color of button text in various states.
@@ -157,7 +168,8 @@ define gui.button_text_hover_color = gui.hover_color
 define gui.button_text_selected_color = gui.selected_color
 define gui.button_text_insensitive_color = gui.insensitive_color
 
-## 按钮文本的水平对齐方式。（0.0 为左对齐，0.5 为居中显示，1.0 为右对齐）。
+## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
+## is right).
 define gui.button_text_xalign = 0.0
 
 
@@ -187,9 +199,10 @@ define gui.quick_button_text_selected_color = gui.accent_color
 # define gui.navigation_button_width = 250
 
 
-## 选项按钮 ########################################################################
+## Choice Buttons ##############################################################
 ##
-## 用于游戏内菜单的选项按钮。
+## Choice buttons are used in the in-game menus.
+
 
 define gui.choice_button_width = 790
 define gui.choice_button_height = None
@@ -203,13 +216,13 @@ define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = "#444444"
 
 
-## 存档按钮 ########################################################################
+## File Slot Buttons ###########################################################
 ##
 ## A file slot button is a special kind of button. It contains a thumbnail
 ## image, and text describing the contents of the save slot. A save slot uses
 ## image files in gui/button, like the other kinds of buttons.
 
-## 存档位按钮。
+## The save slot button.
 define gui.slot_button_width = 276
 define gui.slot_button_height = 206
 define gui.slot_button_borders = Borders(10, 10, 10, 10)
@@ -261,7 +274,7 @@ define gui.page_spacing = 0
 ## The spacing between file slots.
 define gui.slot_spacing = 10
 
-## 标题菜单文本的位置。
+## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
 
 
@@ -319,32 +332,35 @@ define gui.vslider_borders = Borders(4, 4, 4, 4)
 define gui.unscrollable = "hide"
 
 
-## 历史 ##########################################################################
+## History #####################################################################
 ##
-## 历史记录屏幕显示玩家已经阅读过的对话。
+## The history screen displays dialogue that the player has already dismissed.
 
-## Ren'Py 将保留的对话历史块数。
+## The number of blocks of dialogue history Ren'Py will keep.
 define config.history_length = 250
 
-## 历史屏幕条目的高度，或设置为“None”以使高度变量自适应。
+## The height of a history screen entry, or None to make the height variable at
+## the cost of performance.
 define gui.history_height = 140
 
-## 所指定叙述角色的标签的坐标、宽度和对齐方式。
-define gui.history_name_xpos = 155
+## The position, width, and alignment of the label giving the name of the
+## speaking character.
+define gui.history_name_xpos = 150
 define gui.history_name_ypos = 0
-define gui.history_name_width = 155
+define gui.history_name_width = 150
 define gui.history_name_xalign = 1.0
 
-## 对话文本的坐标、宽度和对齐方式。
+## The position, width, and alignment of the dialogue text.
 define gui.history_text_xpos = 170
-define gui.history_text_ypos = 2
+define gui.history_text_ypos = 5
 define gui.history_text_width = 740
 define gui.history_text_xalign = 0.0
 
 
-## NVL 模式 ######################################################################
+## NVL-Mode ####################################################################
 ##
-## NVL 模式屏幕显示 NVL 模式的角色所产生的对话。
+## The NVL-mode screen displays the dialogue spoken by NVL-mode characters.
+
 
 ## The borders of the background of the NVL-mode background window.
 define gui.nvl_borders = Borders(0, 10, 0, 20)
@@ -361,13 +377,14 @@ define gui.nvl_height = 115
 ## NVL-mode entries and an NVL-mode menu.
 define gui.nvl_spacing = 10
 
-## 所指定叙述角色的标签的坐标、宽度和对齐方式。
+## The position, width, and alignment of the label giving the name of the
+## speaking character.
 define gui.nvl_name_xpos = 430
 define gui.nvl_name_ypos = 0
 define gui.nvl_name_width = 150
 define gui.nvl_name_xalign = 1.0
 
-## 对话文本的坐标、宽度和对齐方式。
+## The position, width, and alignment of the dialogue text.
 define gui.nvl_text_xpos = 450
 define gui.nvl_text_ypos = 8
 define gui.nvl_text_width = 590
@@ -384,29 +401,33 @@ define gui.nvl_thought_xalign = 0.0
 define gui.nvl_button_xpos = 450
 define gui.nvl_button_xalign = 0.0
 
-## 本地化 #########################################################################
+## Localization ################################################################
 
-## 该变量控制允许在何时换行。默认值适用于大多数语言。可用的值请参见 https://
+## This controls where a line break is permitted. The default is suitable
+## for most languages. A list of available values can be found at https://
 ## www.renpy.org/doc/html/style_properties.html#style-property-language
 
 define gui.language = "unicode"
 
 
+
 ################################################################################
-## 移动设备
+## Mobile devices
 ################################################################################
 
 init python:
 
-    ## 该变量增加快捷菜单按钮的尺寸来使它们在平板和手机上更容易按到。
+    ## This increases the size of the quick buttons to make them easier to touch
+    ## on tablets and phones.
     if renpy.variant("touch"):
 
         gui.quick_button_borders = Borders(40, 14, 40, 0)
 
-    ## 该变量更改各个 GUI 元素的尺寸和间距来确保它们在手机上更容易识别。
+    ## This changes the size and spacing of various GUI elements to ensure they
+    ## are easily visible on phones.
     if renpy.variant("small"):
 
-        ## 字体大小。
+        ## Font sizes.
         gui.text_size = 30
         gui.name_text_size = 36
         gui.notify_text_size = 25
@@ -414,13 +435,13 @@ init python:
         gui.button_text_size = 30
         gui.label_text_size = 34
 
-        ## 调整对话框的位置。
+        ## Adjust the location of the textbox.
         gui.textbox_height = 240
         gui.name_xpos = 80
         gui.text_xpos = 90
         gui.text_width = 1100
 
-        ## 更改各元素的尺寸和间距。
+        ## Change the size and spacing of items in the game menu.
         gui.slider_size = 36
 
         gui.choice_button_width = 1240
@@ -433,11 +454,11 @@ init python:
 
         gui.quick_button_text_size = 20
 
-        ## 文件按钮布局。
+        ## File button layout.
         gui.file_slot_cols = 2
         gui.file_slot_rows = 2
 
-        ## NVL 模式。
+        ## NVL-mode.
         gui.nvl_height = 170
 
         gui.nvl_name_width = 305
